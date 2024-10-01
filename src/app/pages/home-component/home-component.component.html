@@ -1,7 +1,7 @@
-<app-poke-header></app-poke-header>
+<app-poke-search (emitSearch)="setSearchText($event)" />
 
+<app-poke-list [pokemons]="pokemons()"/>
 
-
-<main>
-    <app-poke-list></app-poke-list>
-</main>
+@if (apiError()) {
+    <img src="/assets/error.png" alt="Deu erro na mostragem do pokemon" width="100%">
+}

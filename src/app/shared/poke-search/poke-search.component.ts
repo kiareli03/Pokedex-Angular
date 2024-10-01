@@ -1,22 +1,15 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-poke-search',
   standalone: true,
-  imports: [],
   templateUrl: './poke-search.component.html',
   styleUrl: './poke-search.component.scss'
 })
-export class PokeSearchComponent implements OnInit {
-
-  @Output() public emmitSearch: EventEmitter<string> = new EventEmitter();
-
-  constructor(){}
-
-  ngOnInit(): void {    
-  }
+export class PokeSearchComponent {
+  emitSearch = output<string>();
 
   public search(value: string){
-    this.emmitSearch.emit(value);
+    this.emitSearch.emit(value);
   }
 }
