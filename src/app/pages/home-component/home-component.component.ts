@@ -3,7 +3,7 @@ import { PokeListComponent } from '../../shared/poke-list/poke-list.component';
 import { PokeSearchComponent } from "../../shared/poke-search/poke-search.component";
 import { PokeApiService } from '../../services/poke-api.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { catchError, of } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-home-component',
@@ -28,11 +28,11 @@ export class HomeComponentComponent {
     this.searchText.set(value.trim());
   }
 
-  private getAllPokemon() {
+  private getAllPokemon(): Observable<any[]> {
     return this.pokeApiService.getAllPokemons().pipe(
       catchError(() => {
         this.apiError.set(true);
-        return of();
+        return of([]);
       })
     )
   }
