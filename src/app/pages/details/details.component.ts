@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { catchError, forkJoin, Observable, of } from 'rxjs';
+import { catchError, of } from 'rxjs';
 import { PokeApiService } from '../../services/poke-api.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -16,18 +16,17 @@ export class DetailsComponent {
   private activatedRoute = inject(ActivatedRoute);
 
   pokemonData = toSignal(this.getPokemon(), { initialValue: [] });
-  pokemon = computed(() => this.pokemonData()[0] || null);
-  pokemonSpecies = computed(() => this.pokemonData()[1] || null);
-  isLoading = computed(() => !this.pokemonData().length)
+  pokemon = computed(() => this.pokemonData()[0]);
+  pokemonSpecies = computed(() => this.pokemonData()[1]);
   apiError = signal(false);
 
-  private getPokemon(): Observable<any[]> {
+  private getPokemon() {
     const id = this.activatedRoute.snapshot.params['id'];
 
     return this.pokeApiService.getPokemonData(id).pipe(
       catchError(() => {
         this.apiError.set(true);
-        return of([]);
+        return of([null, null]);
       })
     )
   }

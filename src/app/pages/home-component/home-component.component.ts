@@ -1,9 +1,10 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { PokeListComponent } from '../../shared/poke-list/poke-list.component';
-import { PokeSearchComponent } from "../../shared/poke-search/poke-search.component";
+import { PokeListComponent } from '../../components/poke-list/poke-list.component';
+import { PokeSearchComponent } from "../../components/poke-search/poke-search.component";
 import { PokeApiService } from '../../services/poke-api.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, Observable, of } from 'rxjs';
+import { Pokemon } from '../../models/pokemon';
 
 @Component({
   selector: 'app-home-component',
@@ -20,7 +21,7 @@ export class HomeComponentComponent {
   searchText = signal<string>('');
   pokemons = computed(() => {
     return this.searchText()
-      ? this.allPokemons().filter((res: any) => !res.name.indexOf(this.searchText().toLowerCase()))
+      ? this.allPokemons().filter((res) => !res.name.indexOf(this.searchText().toLowerCase()))
       : this.allPokemons()
   });
 
@@ -28,7 +29,7 @@ export class HomeComponentComponent {
     this.searchText.set(value.trim());
   }
 
-  private getAllPokemon(): Observable<any[]> {
+  private getAllPokemon(): Observable<Pokemon[]> {
     return this.pokeApiService.getAllPokemons().pipe(
       catchError(() => {
         this.apiError.set(true);

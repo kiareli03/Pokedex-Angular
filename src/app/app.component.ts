@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PokeHeaderComponent } from "./shared/poke-header/poke-header.component";
+import { PokeHeaderComponent } from "./components/poke-header/poke-header.component";
 
 
 @Component({

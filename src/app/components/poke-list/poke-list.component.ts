@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Pokemon } from '../../models/pokemon';
 
 @Component({
   selector: 'app-poke-list',
@@ -9,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './poke-list.component.scss'
 })
 export class PokeListComponent {
-  pokemons = input<any[]>([]);
+  pokemons = input<Pokemon[]>([]);
 }
