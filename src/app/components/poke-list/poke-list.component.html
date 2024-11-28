@@ -1,0 +1,21 @@
+<section class="listagem">
+    @for (pokemon of pokemons(); track pokemon.name) {
+    <a [routerLink]="['details', pokemon.id]" class="pokemon">
+        <section class="pokemon__status">
+            <h2>
+                {{ pokemon.name }}
+            </h2>
+
+            <ul>
+                @for (type of pokemon.types; track $index) {
+                <li> {{ type.type.name }} </li>
+                }
+            </ul>
+        </section>
+
+        <section class="pokemon__image">
+            <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+        </section>
+    </a>
+    }
+</section>
