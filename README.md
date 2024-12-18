@@ -1,10 +1,12 @@
 # PokedexAngular
 
-"Desenvolvi uma Pokédex utilizando Angular na versão 18.4, com base em um projeto apresentado por Denner Troquatte em seu vídeo tutorial(https://www.youtube.com/watch?v=UhOcUII_5PU), onde foi utilizada a versão 12 do framework. Durante a recriação, adaptei o projeto para as melhores práticas da versão mais recente do Angular, destacando a substituição dos NgModules por componentes standalone, alinhando o projeto às diretrizes modernas do framework.
+"Desenvolvi uma Pokédex utilizando Angular na versão 18.4, com base em um projeto apresentado por Denner Troquatte em seu vídeo tutorial, que utilizava a versão 12 do framework. Durante a recriação, adaptei o projeto para as melhores práticas da versão mais recente do Angular, substituindo os NgModules por componentes standalone, em conformidade com as diretrizes modernas do framework.
 
-Além disso, implementei a integração com a PokéAPI para obter informações detalhadas sobre os Pokémon, utilizando serviços para chamadas à API e aplicando métodos de injeção de dependências para garantir um código modular e reutilizável. Também empreguei Signals para o controle de estado, explorando as funcionalidades nativas mais recentes do Angular.
+O projeto lista os 151 primeiros Pokémon, exibindo na página inicial suas imagens e tipos, além de uma barra de pesquisa no cabeçalho para facilitar a localização dos Pokémon. Ao clicar em um card de Pokémon, o sistema navega para uma rota dedicada à exibição de detalhes, sem recarregar a página, proporcionando uma experiência de navegação fluida. Na página de detalhes, são apresentadas informações adicionais sobre o Pokémon de forma dinâmica, utilizando dados obtidos pela integração com a PokéAPI.
 
-Essa experiência me permitiu aprimorar habilidades essenciais no desenvolvimento com Angular, como componentização avançada, consumo de APIs RESTful e gerenciamento de estado, além de reforçar meu compromisso em acompanhar a evolução de tecnologias modernas."
+Para implementar essa integração, utilizei serviços para chamadas à API, aplicando métodos de injeção de dependências que garantem modularidade e reutilização do código. Também empreguei Signals para o controle de estado, aproveitando recursos nativos do Angular mais recente.
+
+Essa experiência foi fundamental para o aprimoramento de habilidades no desenvolvimento com Angular, incluindo componentização avançada, consumo de APIs RESTful e gerenciamento de estado. Além disso, reforçou minha capacidade de aplicar tecnologias modernas e de me adaptar rapidamente às inovações do mercado."
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
