@@ -1,5 +1,11 @@
 # PokedexAngular
 
+"Desenvolvi uma Pokédex utilizando Angular na versão 18.4, com base em um projeto apresentado por Denner Troquatte em seu vídeo tutorial(https://www.youtube.com/watch?v=UhOcUII_5PU), onde foi utilizada a versão 12 do framework. Durante a recriação, adaptei o projeto para as melhores práticas da versão mais recente do Angular, destacando a substituição dos NgModules por componentes standalone, alinhando o projeto às diretrizes modernas do framework.
+
+Além disso, implementei a integração com a PokéAPI para obter informações detalhadas sobre os Pokémon, utilizando serviços para chamadas à API e aplicando métodos de injeção de dependências para garantir um código modular e reutilizável. Também empreguei Signals para o controle de estado, explorando as funcionalidades nativas mais recentes do Angular.
+
+Essa experiência me permitiu aprimorar habilidades essenciais no desenvolvimento com Angular, como componentização avançada, consumo de APIs RESTful e gerenciamento de estado, além de reforçar meu compromisso em acompanhar a evolução de tecnologias modernas."
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
 ## Development server
